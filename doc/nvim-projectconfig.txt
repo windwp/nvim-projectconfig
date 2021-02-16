@@ -1,0 +1,16 @@
+*nvim-projectconfig.txt*  nvim-projectconfig.vim
+
+Author:  Trieu Le <longtrieu.ls@live.com>
+License: Same terms as Vim itself (see |license|)
+
+
+Load config depend on current directory.
+
+
+ABOUT                                           *nvim-projectconfig*
+
+Grab the latest version or report a bug on GitHub:
+
+https://github.com/windwp/nvim-projectconfig
+
+vim:tw=78:et:ft=help:norl:
