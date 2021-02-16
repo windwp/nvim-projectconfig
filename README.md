@@ -25,10 +25,13 @@ require('nvim-projectconfig').load_project_config()
 ## FAQ
 *  A command to  open project config file
 
+Command: **EditProjectConfig**
+
  ``` lua
 lua.require("nvim-projectconfig").edit_project_config()
 
 ```
+
 
  * I want to change projects-config directory
 
@@ -39,11 +42,13 @@ require('nvim-projectconfig').load_project_config({
 })
 
 ```
+
  * I have 2 directory have same name.
 
   Currently the only solution is change your directory name :)
 
- * I usually change my directory inside neovim
+
+ * I want to change my directory inside neovim and load project config.
 
  ``` lua
 vim.cmd[[
