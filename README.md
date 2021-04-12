@@ -44,8 +44,23 @@ require('nvim-projectconfig').load_project_config({
 ```
 
  * I have 2 directory have same name.
-
-  Currently the only solution is change your directory name :)
+ 
+``` lua
+require('nvim-projectconfig').load_project_config({
+  project_dir = "~/.config/projects-config/",
+  project_config={
+    {
+      -- full path of your project or a lua regex string
+        path = "projectconfig", 
+        -- use a function or a path to config file 
+        config = function ()
+            print("abcde")
+        end
+    },
+  },
+  silent = false
+})
+```
 
 
  * I want to change my directory inside neovim and load project config.
