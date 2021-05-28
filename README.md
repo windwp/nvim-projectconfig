@@ -9,6 +9,10 @@ you open vim in **awesome** directory.
 
 It will load a config file from `~/.config/nvim/projects/awesome.lua` or `~/.config/nvim/projects/awesome.vim`
 
+this config save outside of your git repo and you don't need to check security on that file.
+It work perfect if you are working on monorepo.
+
+
 ## Install
 ``` vim
   Plug 'windwp/nvim-projectconfig'
