@@ -71,7 +71,13 @@ require('nvim-projectconfig').load_project_config({
 
  ``` lua
 vim.cmd[[
+augroup NvimProjectConfig
+  autocmd!
   autocmd DirChanged * lua require('nvim-projectconfig').load_project_config()
+augroup end
 ]]
+
+ ```
+
 
  ```
