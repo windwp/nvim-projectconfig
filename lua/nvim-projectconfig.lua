@@ -7,7 +7,9 @@ local function execute(file_path)
     file_path = vim.fn.expand(file_path)
     if  vim.fn.filereadable(file_path) == 1 then
         if silent == false then
-            print("load " .. vim.inspect(file_path))
+            vim.defer_fn(function()
+                vim.notify('[project-config] - ' .. vim.fn.fnamemodify(file_path, ':t:r'))
+            end, 100)
         end
         if file_path:match("%.vim$") then
             vim.cmd("source " .. file_path)
