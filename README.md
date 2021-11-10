@@ -20,28 +20,19 @@ It work perfect if you are working on monorepo.
 then add this in your init.lua
 
 ```lua
-require('nvim-projectconfig').load_project_config()
+require('nvim-projectconfig').setup()
 ```
-
-
-
 
 ## FAQ
 *  A command to  open project config file
 
 Command: **EditProjectConfig**
 
- ``` lua
-lua.require("nvim-projectconfig").edit_project_config()
-
-```
-
-
  * I want to change projects-config directory
 
 ``` lua
 
-require('nvim-projectconfig').load_project_config({
+require('nvim-projectconfig').setup({
   project_dir = "~/.config/projects-config/",
 })
 
@@ -50,7 +41,7 @@ require('nvim-projectconfig').load_project_config({
  * I have 2 directory have same name.
  
 ``` lua
-require('nvim-projectconfig').load_project_config({
+require('nvim-projectconfig').setup({
   project_dir = "~/.config/projects-config/",
   project_config={
     {
@@ -62,7 +53,7 @@ require('nvim-projectconfig').load_project_config({
         end
     },
   },
-  silent = false
+  silent = false,-- display message after load config file
 })
 ```
 
@@ -70,14 +61,15 @@ require('nvim-projectconfig').load_project_config({
  * I want to change my directory inside neovim and load project config.
 
  ``` lua
-vim.cmd[[
-augroup NvimProjectConfig
-  autocmd!
-  autocmd DirChanged * lua require('nvim-projectconfig').load_project_config()
-augroup end
-]]
+require('nvim-projectconfig').setup({autocmd=true})
 
  ```
 
 
- ```
+## Bonus
+a function to load and save json file and do whatever you want.
+```lua
+require('nvim-projectconfig').load_json()
+require('nvim-projectconfig').save_json(data)
+```
+
